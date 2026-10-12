@@ -3,16 +3,22 @@
     box-sizing: border-box;
 }
 
+html {
+    min-height: 100%;
+    background: #050505;
+}
+
 body {
     margin: 0;
     min-height: 100vh;
     background: #050505;
     color: #eeeeee;
     font-family: "Courier New", monospace;
+
     display: flex;
     justify-content: center;
-    align-items: center;
-    overflow: hidden;
+    align-items: flex-start;
+
 }
 
 #canvas {
@@ -27,13 +33,18 @@ body {
 .contenido {
     position: relative;
     z-index: 1;
-    width: min(90%, 560px);
-    padding: 35px 20px;
+
+    width: min(92%, 650px);
+    margin: 7vh auto 40px;
+    padding: 35px 25px;
+
     text-align: center;
-    background: rgba(5, 5, 5, 0.72);
+    background: rgba(5, 5, 5, 0.88);
     border: 1px solid #38202f;
     border-radius: 12px;
     box-shadow: 0 0 35px #ff149315;
+
+    flex-shrink: 0;
     animation: aparecer 1.2s ease both;
 }
 
