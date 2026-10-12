@@ -1,0 +1,132 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: #050505;
+    color: #eeeeee;
+    font-family: "Courier New", monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+#canvas {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.contenido {
+    position: relative;
+    z-index: 1;
+    width: min(90%, 560px);
+    padding: 35px 20px;
+    text-align: center;
+    background: rgba(5, 5, 5, 0.72);
+    border: 1px solid #38202f;
+    border-radius: 12px;
+    box-shadow: 0 0 35px #ff149315;
+    animation: aparecer 1.2s ease both;
+}
+
+.icono {
+    color: #ff69b4;
+    font-size: 2rem;
+    margin-bottom: 25px;
+}
+
+.etiqueta {
+    color: #b889a2;
+    font-size: 0.7rem;
+    letter-spacing: 4px;
+}
+
+h1 {
+    font-size: clamp(2.5rem, 10vw, 4rem);
+    font-weight: 400;
+    margin: 22px 0;
+}
+
+h1 span,
+.final span {
+    color: #ff69b4;
+}
+
+.linea {
+    width: 45px;
+    height: 2px;
+    background: #ff69b4;
+    margin: 25px auto;
+}
+
+.mensaje {
+    color: #d0c4cc;
+    font-size: clamp(0.95rem, 3vw, 1.15rem);
+    line-height: 1.9;
+}
+
+.final {
+    color: #ff9acb;
+    margin-top: 25px;
+    font-size: 0.95rem;
+}
+
+button {
+    margin-top: 28px;
+    padding: 12px 18px;
+    color: #ff9acb;
+    background: transparent;
+    border: 1px solid #63334e;
+    border-radius: 6px;
+    font: inherit;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+button:hover:not(:disabled) {
+    background: #ff69b415;
+    border-color: #ff69b4;
+}
+
+#sorpresa {
+    color: #eeeeee;
+    line-height: 1.8;
+    margin-top: 25px;
+    animation: aparecer 0.8s ease both;
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 480px) {
+    .contenido {
+        padding: 30px 15px;
+    }
+
+    .etiqueta {
+        letter-spacing: 2px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+}

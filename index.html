@@ -1,0 +1,145 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#050505">
+    <title>Un detalle para vos ❤️</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+
+    <main class="contenido" id="inicio">
+        <div class="icono">&lt;/&gt;</div>
+
+        <p class="etiqueta">UN PEQUEÑO DETALLE</p>
+        <h1>Para vos <span>:)</span></h1>
+        <div class="linea"></div>
+
+        <p class="mensaje">
+            No sabía bien qué hacerte,<br>
+            así que hice esto.
+        </p>
+
+        <p class="final">Espero que te guste <span>♥</span></p>
+
+        <button id="botonInicio">Una cosita más ↓</button>
+    </main>
+
+    <main class="contenido carta" id="carta" hidden>
+        <div class="icono">♡</div>
+
+        <p class="etiqueta">ESTO ES PARA VOS</p>
+        <h1>Bueno, <span>vos y yo.</span></h1>
+        <div class="linea"></div>
+
+        <div class="texto-carta">
+            <p>
+                Sé que capaz no tuvimos la propuesta perfecta,
+                de esas que uno se imagina o que salen como en las
+                películas, pero quería preguntártelo de una forma
+                que tuviera un poquito de mí.
+            </p>
+
+            <p>
+                Me hace bien estar con vos, compartir momentos
+                y verte sonreír. Capaz a veces son cosas chiquitas,
+                como una flor o algún detalle que te llevo,
+                pero me gusta pensar en esas cosas que te pueden
+                alegrar el día.
+            </p>
+
+            <p>
+                No siempre soy el mejor expresando lo que siento
+                con palabras, así que supongo que hacerte una página en este caso o algun chiste casi siempre,
+                es bastante más de mi estilo jajaja.
+            </p>
+
+            <p>
+                Me gusta tenerte en mi vida y seguir compartiendo
+                momentos con vos. Y aunque esta propuesta no sea
+                perfecta, las ganas de hacerte feliz y sacarte
+                una sonrisa sí son de verdad.
+            </p>
+
+            <p class="pregunta-intro">
+                Así que bueno, acá va la pregunta...
+            </p>
+        </div>
+
+        <h2 class="pregunta">¿Querés ser mi novia? ❤️</h2>
+
+        <div class="botones">
+            <button id="botonSi" class="boton-si">
+                SÍ ❤️
+            </button>
+
+            <button id="botonNo" class="boton-no">
+                No 🙃
+            </button>
+        </div>
+
+        <p id="mensajeNo" class="mensaje-no" hidden>
+            Epa, creo que tocaste mal JAJAJA <br>
+            Dale, te doy otra oportunidad 👀
+        </p>
+    </main>
+
+    <main class="contenido celebracion" id="final" hidden>
+        <div class="icono">♥</div>
+
+        <p class="etiqueta">ME SACASTE UNA SONRISA</p>
+        <h1>Sabía que sí <span>:)</span></h1>
+        <div class="linea"></div>
+
+        <p class="mensaje">
+            Bueno, ahora sí tenemos<br>
+            una historia más para contar.
+        </p>
+
+        <p class="final">
+            Gracias por elegirme ❤️
+        </p>
+
+        <div class="corazon-final">♥</div>
+    </main>
+
+    <script>
+        const inicio = document.getElementById("inicio");
+        const carta = document.getElementById("carta");
+        const final = document.getElementById("final");
+
+        const botonInicio = document.getElementById("botonInicio");
+        const botonSi = document.getElementById("botonSi");
+        const botonNo = document.getElementById("botonNo");
+        const mensajeNo = document.getElementById("mensajeNo");
+
+        function mostrar(pantalla) {
+            inicio.hidden = true;
+            carta.hidden = true;
+            final.hidden = true;
+
+            pantalla.hidden = false;
+            window.scrollTo(0, 0);
+        }
+
+        botonInicio.addEventListener("click", () => {
+            mostrar(carta);
+        });
+
+        botonNo.addEventListener("click", () => {
+            mensajeNo.hidden = false;
+            botonNo.textContent = "Volver a pensar 🤔";
+
+            botonSi.classList.add("destacado");
+        });
+
+        botonSi.addEventListener("click", () => {
+            mostrar(final);
+        });
+    </script>
+</body>
+</html>
