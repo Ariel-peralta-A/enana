@@ -114,6 +114,15 @@ button:hover:not(:disabled) {
     animation: aparecer 0.8s ease both;
 }
 
+
+.carta,
+.celebracion {
+    width: min(92%, 650px);
+    max-height: none;
+    overflow: visible;
+}
+
+
 @keyframes aparecer {
     from {
         opacity: 0;
